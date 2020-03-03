@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :votes
+  resources :show_lists
   resources :shows
   resources :lists
   resources :users

@@ -1,0 +1,2 @@
+class ShowListsController < ApplicationController
+end
