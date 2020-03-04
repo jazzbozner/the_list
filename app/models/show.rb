@@ -1,4 +1,4 @@
 class Show < ApplicationRecord
-  has_many :shows_lists
-  has_many :lists, through: shows_lists
+  has_many :lists_shows
+  has_many :lists, through: :lists_shows
 end

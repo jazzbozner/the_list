@@ -6,12 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u1 = User.create(name: "Jazz", password: "123")
+u1 = User.create(username: "Jazz", password: "123")
 
 l1 = List.create(name: "Best Action Shows", owner_id: u1)
 
 Vote.create(user_id: u1, list_id: l1)
 
-s1 = Show.create(title: "Who am I?")
+s1 = Show.create(title: "Who am I?", list_id: l1)
+Show.lists(list_id: l1)
 
-ShowsList.create(list_id: l1, show_id: s1)
+ListShow.create(show_id: s1.id, list_id: l1.id)
