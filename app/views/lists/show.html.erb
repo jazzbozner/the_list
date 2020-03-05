@@ -1,0 +1,10 @@
+<%= button_to "All Lists", lists_path, method: :get %>
+<%= button_to "Edit List", edit_list_path(@list), method: :get %>
+<%= button_to "Delete List", @list, method: :delete %>
+<h1>List: <%= @list.name %> </h1>
+<h2> Description: <%= @list.description %> </h2>
+    <ol> Shows:
+    <% @list.shows.each do |show| %>
+        <div><li><%= show.title %></div><br>
+    <% end %>
+    </ol>

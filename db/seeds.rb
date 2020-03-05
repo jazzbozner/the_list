@@ -8,11 +8,14 @@
 
 u1 = User.create(username: "Jazz", password: "123")
 
-l1 = List.create(name: "Best Action Shows", owner_id: u1)
+l1 = List.create(name: "Best Action Shows", description: "This list contains some of the best action-packed movies/shows I know!")
 
 Vote.create(user_id: u1, list_id: l1)
 
-s1 = Show.create(title: "Who am I?", list_id: l1)
-Show.lists(list_id: l1)
+s1 = Show.create(title: "Who Am I?")
 
-ListShow.create(show_id: s1.id, list_id: l1.id)
+10.times do
+  Show.create(title: Faker::Book.title)
+end
+
+ListsShow.create(show_id: s1.id, list_id: l1.id)

@@ -1,0 +1,7 @@
+<h1> Hello <%= @user.username %></h1>
+<%= button_to "All Lists", lists_path, method: :get %>
+<%= button_to "Log out", logout_path, method: :delete %><br>
+
+    <% @user.lists.each do |list| %>
+         <li><%= link_to list.name, list %> - <%= list.description %></li>
+    <% end %>
