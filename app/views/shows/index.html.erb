@@ -1,5 +1,7 @@
 <h1> All Shows</h1>
 <%= button_to "View All Lists", lists_path, method: :get %>
-<% @shows.each do |show| %>
-<li><%= show.title %></li>
-<% end %>
+<ul>
+    <% @shows.each do |show| %>
+        <li><%= show.title %></li>
+    <% end %>
+</ul>

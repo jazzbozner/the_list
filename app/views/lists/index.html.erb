@@ -2,9 +2,9 @@
 <%= button_to "Create List", new_list_path, method: :get %><br>
 <%= button_to "View Shows", shows_path, method: :get %><br>
 <%= button_to "View My Lists", user_path(session[:user_id]), method: :get %><br>
-<%= button_to "Log Out", logout_path, method: :delete %><br>
+<%= button_to "Log Out", logout_path, method: :delete %>
     <ul> List name:
         <% @lists.each do |list| %>
-            <li> <%= link_to list.name, list_path(list) %> - <%= list.description %></li> 
+            <li> <%= link_to list.name, list_path(list) %> - <%= list.description %></li> <br>
         <% end %>
         </ul>
