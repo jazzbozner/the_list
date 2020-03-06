@@ -1,16 +1,17 @@
-<%= button_to "All Lists", lists_path, method: :get %>
+<%= button_to "All Lists", lists_path, method: :get %><br>
 
 <% @list.users.each do |user| %>
-<% if user.id == current_user %>
-<%= button_to "Edit List", edit_list_path(@list), method: :get %>
+    <% if user == current_user %>
+<%= button_to "Edit List", edit_list_path(@list), method: :get %><br>
 <%= button_to "Delete List", @list, method: :delete %>
-<% end %>
+    <% end %>
 <% end %>
 
 <h1>List: <%= @list.name %> </h1>
+   <div> <label> Votes: <%= @votes %></div>
 <h2> Description: <%= @list.description %> </h2>
     <ol> Shows:
     <% @list.shows.each do |show| %>
-        <div><li><%= show.title %></div><br>
+        <div><li><%= show.title %></div>
     <% end %>
     </ol>

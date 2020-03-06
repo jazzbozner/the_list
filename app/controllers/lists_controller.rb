@@ -3,8 +3,11 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
+  # Create new user does not automatically login
+  # Some Lists are not associated specific users due to previous seed
   def show
     @list = List.find(params[:id])
+    @votes = @list.votes.count
   end
 
   def new
@@ -43,6 +46,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :description, user_ids: [], show_ids: [])
+    params.require(:list).permit(:name, :description, users_ids: [], show_ids: [])
   end
 end
