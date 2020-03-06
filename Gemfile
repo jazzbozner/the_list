@@ -22,8 +22,9 @@ gem "jbuilder", "~> 2.7"
 # Use Active Model has_secure_password
 gem "bcrypt", "~> 3.1.7"
 # Facker for creating show instances to fill our database
-gem "faker"
-
+gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
+# bootstrap for further styling
+gem "bootstrap-sass"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

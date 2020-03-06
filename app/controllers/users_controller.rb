@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   skip_before_action :authorized, only: [:new, :create, :menu]
 
+  def show
+    @user = User.find(session[:user_id])
+  end
+
   def new
     @user = User.new
   end
@@ -15,8 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def show # show all user's lists
-    @user = User.find(session[:user_id])
+  def data
+    @users = User.all
+    @shows = Show.all
+    @lists = List.all
   end
 
   private

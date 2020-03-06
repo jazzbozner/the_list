@@ -1,11 +1,16 @@
 <h1>Edit List</h1>
+<div>
 
 <%= form_for @list do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label :description %><br>
   <%= f.text_area :description %><br>
-  <%= f.label :shows %><br>
-  <%= f.collection_check_boxes :show_ids, Show.all, :id, :title %><br>
+  <%= f.label :shows %>:<br>
+  <%= f.collection_check_boxes :show_ids, Show.all.order(:title), :id, :title do |b| %><br>
+    <%= b.check_box(class: "check_box") %>
+     <%= b.object.title %><br>
+   <% end %>
   <%= f.submit "Update" %>
 <% end %>
+</div>
