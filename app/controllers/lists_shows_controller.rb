@@ -1,0 +1,2 @@
+class ListsShowsController < ApplicationController
+end
