@@ -7,7 +7,6 @@ class ListsController < ApplicationController
   # Some Lists are not associated specific users due to previous seed
   def show
     @list = List.find(params[:id])
-    # @votes = @list.votes.count
   end
 
   def new

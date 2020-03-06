@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_action :authorized, only: [:new, :create, :menu, :login]
-
+  # Authenticated to view specific buttons and routes
+  # creates new session for the user
   def create
     @user = User.find_by(username: params[:username])
 
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # Deletes the session
   def destroy
     session.delete(:user_id)
     redirect_to root_path

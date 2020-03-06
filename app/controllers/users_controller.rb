@@ -19,6 +19,8 @@ class UsersController < ApplicationController
     end
   end
 
+  # display little data about the web app.
+  # Will include logic for top most vidoes selected, etc.
   def data
     @users = User.all
     @shows = Show.all
