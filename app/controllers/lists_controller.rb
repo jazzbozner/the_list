@@ -16,7 +16,7 @@ class ListsController < ApplicationController
   def create
     @list = List.create(list_params)
     @user = User.find(session[:user_id])
-
+    byebug
     if @list.valid?
       @user.lists << @list
       redirect_to @list
